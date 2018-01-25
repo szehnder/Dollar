@@ -1071,7 +1071,7 @@ open class `$` {
         let strings = self.permutation(`$`.initial(elements))
         if let char = `$`.last(elements) {
             return `$`.reduce(strings, initial: []) { (result, str) -> [String] in
-                let splitStr = `$`.map(str.description.characters) { $0.description }
+                let splitStr = `$`.map(str.description) { $0.description }
                 return result + `$`.map(0...splitStr.count) { (index) -> String in
                     var copy = `$`.copy(splitStr)
                     copy.insert(char.description, at: (splitStr.count - index))
